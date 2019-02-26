@@ -1,0 +1,6 @@
+github.com/gorilla/mux v1.7.0 h1:tOSd0UKHQd6urX6ApfOn4XdBMY6Sh1MfxV3kmaazO+U=
+github.com/gorilla/mux v1.7.0/go.mod h1:1lud6UwP+6orDFRuTfBEV8e9/aOM/c4fVVCaMa2zaAs=
+github.com/julienschmidt/httprouter v1.2.0 h1:TDTW5Yz1mjftljbcKqRcrYhd4XeOoI98t+9HbQbYf7g=
+github.com/julienschmidt/httprouter v1.2.0/go.mod h1:SYymIcj16QtmaHHD7aYtjjsJG7VTCxuUUipMqKk8s4w=
+github.com/pa3ng/httprouter-rest-boilerplate v0.0.0-20180827184320-1ee83f50cfa7 h1:jtih1vBEeFNt9q6Cd4yqqlWrMBAqfVecZy4488TYAOg=
+github.com/pa3ng/httprouter-rest-boilerplate v0.0.0-20180827184320-1ee83f50cfa7/go.mod h1:jcVt1zbYJjDd/53veCipswUo1VSpS4vtoE1FBLA1sQM=
