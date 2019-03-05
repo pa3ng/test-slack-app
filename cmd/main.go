@@ -12,6 +12,10 @@ var (
 )
 
 func init() {
+	if "" == os.Getenv("SLACK_BOT_USER_OAUTH_ACCESS_TOKEN") {
+		panic("SLACK_BOT_USER_OAUTH_ACCESS_TOKEN is not set!")
+	}
+
 	if "" == os.Getenv("VERIFICATION_TOKEN") {
 		panic("VERIFICATION_TOKEN is not set!")
 	}

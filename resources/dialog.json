@@ -1,0 +1,156 @@
+{
+    "callback_id": "repo-create",
+    "title": "Repository Create",
+    "submit_label": "Submit",
+    "elements": [
+      {
+        "label": "Repository Name",
+        "name": "repo_name",
+        "type": "text",
+        "placeholder": "my-repo"
+      },
+      {
+        "label": "Repository Type",
+        "name": "repo_type",
+        "type": "select",
+        "options": [
+          {
+            "label": "Local",
+            "value": "local"
+          },
+          {
+            "label": "Remote",
+            "value": "remote"
+          },
+          {
+            "label": "Virtual",
+            "value": "virtual"
+          }
+        ]
+      },
+      {
+        "label": "Package Type",
+        "name": "package_type",
+        "type": "select",
+        "options": [
+          {
+            "label": "Docker",
+            "value": "docker"
+          },
+          {
+            "label": "Generic",
+            "value": "generic"
+          },
+          {
+            "label": "Bower",
+            "value": "bower"
+          },
+          {
+            "label": "Chef",
+            "value": "chef"
+          },
+          {
+            "label": "CocoaPods",
+            "value": "cocoapods"
+          },
+          {
+            "label": "Conan",
+            "value": "conan"
+          },
+          {
+            "label": "CRAN",
+            "value": "cran"
+          },
+          {
+            "label": "Debian",
+            "value": "debian"
+          },
+          {
+            "label": "Gems",
+            "value": "gems"
+          },
+          {
+            "label": "Git LFS",
+            "value": "gitlfs"
+          },
+          {
+            "label": "Go",
+            "value": "go"
+          },
+          {
+            "label": "Gradle",
+            "value": "gradle"
+          },
+          {
+            "label": "Ivy",
+            "value": "ivy"
+          },
+          {
+            "label": "npm",
+            "value": "npm"
+          },
+          {
+            "label": "Generic",
+            "value": "generic"
+          },
+          {
+            "label": "NuGet",
+            "value": "nuget"
+          },
+          {
+            "label": "Opkg",
+            "value": "opkg"
+          },
+          {
+            "label": "PHP Composer",
+            "value": "php_composer"
+          },
+          {
+            "label": "Puppet",
+            "value": "puppet"
+          },
+          {
+            "label": "PyPI",
+            "value": "pypi"
+          },
+          {
+            "label": "RPM",
+            "value": "rpm"
+          },
+          {
+            "label": "SBT",
+            "value": "sbt"
+          },
+          {
+            "label": "Vagrant",
+            "value": "vagrant"
+          }
+        ]
+      },
+      {
+        "label": "Description",
+        "name": "description",
+        "type": "textarea",
+        "hint": "Provide welcome message for users and channel guidelines"
+      },
+      {
+        "label": "Repository Owner",
+        "name": "repo_owner",
+        "type": "text",
+        "placeholder": "z00abcd"
+      },
+      {
+        "label": "Blossom CI ID",
+        "name": "blossom_ci_id",
+        "optional": true,
+        "type": "text",
+        "placeholder": "CI12345678"
+      },
+      {
+        "label": "Additional Notes",
+        "name": "request_notes",
+        "optional": true,
+        "type": "text"
+      }
+    ]
+  }

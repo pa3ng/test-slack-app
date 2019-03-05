@@ -24,8 +24,15 @@ var health = Route{
 var commands = Route{
 	"Commands",
 	"POST",
-	"/slack_events/v1/ymir_dev-v1_commands/",
+	"/slack_events/v1/ymir_dev-v1_commands",
 	server.Commands,
+}
+
+var interactions = Route{
+	"Interactions",
+	"POST",
+	"/slack_events/v1/ymir_dev-v1_interactions",
+	server.Interactions,
 }
 
 // NewRouter creates a custom HTTP router with added middleware
@@ -34,6 +41,7 @@ func NewRouter() *httprouter.Router {
 
 	router.GET(health.Path, health.HandlerFunc)
 	router.POST(commands.Path, handler(commands))
+	router.POST(interactions.Path, handler(interactions))
 
 	return router
 }
