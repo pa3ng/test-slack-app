@@ -5,14 +5,18 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"net/url"
 	"os"
 	"path/filepath"
 	"strings"
 )
 
+type OpenDialogRequest struct {
+	TriggerID string `json:"trigger_id"` // Required
+	Dialog    string `json:"dialog"`     // Required
+}
+
 type Dialog struct {
-	TriggerID      string          `json:"trigger_id"`      // Required
+	TriggerID      string          `json:"trigger_id"`
 	CallbackID     string          `json:"callback_id"`     // Required
 	State          string          `json:"state,omitempty"` // Optional
 	Title          string          `json:"title"`
@@ -57,23 +61,28 @@ func OpenDialog(triggerID string) error {
 		return fmt.Errorf("[ERROR] %s", err.Error())
 	}
 
-	payload, err := json.Marshal(&d)
+	dString, err := json.Marshal(&d)
 	if err != nil {
 		return fmt.Errorf("[ERROR] %s", err.Error())
 	}
 
-	// convert payload to UTF formatted string
-	t := &url.URL{Path: string(payload)}
-	encodedPayload := t.String()
-	encodedPayload = strings.Trim(encodedPayload, "./")
+	odr := &OpenDialogRequest{
+		TriggerID: triggerID,
+		Dialog:    string(dString),
+	}
 
-	urlfmt := "https://slack.com/api/dialog.open?token=%s&trigger_id=%s&dialog=%s"
-	url := fmt.Sprintf(urlfmt, token, triggerID, encodedPayload)
-	req, err := http.NewRequest("POST", url, nil)
+	payload, err := json.Marshal(odr)
 	if err != nil {
 		return fmt.Errorf("[ERROR] %s", err.Error())
 	}
-	req.Header.Add("Content-Type", "application/json")
+
+	url := "https://slack.com/api/dialog.open"
+	req, err := http.NewRequest("POST", url, strings.NewReader(string(payload)))
+	if err != nil {
+		return fmt.Errorf("[ERROR] %s", err.Error())
+	}
+	req.Header.Add("Content-Type", "application/json; charset=utf-8")
+	req.Header.Add("Authorization", fmt.Sprintf("Bearer %s", token))
 
 	client := http.Client{}
 	resp, err := client.Do(req)
