@@ -1,0 +1,171 @@
+{
+    "trigger_id": "923749283748239472.18394719874913.9s8dg8sn78s7f6nd6fmdg4m64fg5d54h3",
+    "callback_id": "repo-create",
+    "title": "Repository Create",
+    "submit_label": "Submit",
+    "notify_on_cancel": false,
+    "elements": [
+      {
+        "type": "text",
+        "label": "Repository Name",
+        "name": "repo_name",
+        "placeholder": "my-repo",
+        "optional": false,
+        "options": null
+      },
+      {
+        "type": "select",
+        "label": "Repository Type",
+        "name": "repo_type",
+        "placeholder": "",
+        "optional": false,
+        "options": [
+          {
+            "label": "Local",
+            "value": "local"
+          },
+          {
+            "label": "Remote",
+            "value": "remote"
+          },
+          {
+            "label": "Virtual",
+            "value": "virtual"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "label": "Package Type",
+        "name": "package_type",
+        "placeholder": "",
+        "optional": false,
+        "options": [
+          {
+            "label": "Docker",
+            "value": "docker"
+          },
+          {
+            "label": "Generic",
+            "value": "generic"
+          },
+          {
+            "label": "Bower",
+            "value": "bower"
+          },
+          {
+            "label": "Chef",
+            "value": "chef"
+          },
+          {
+            "label": "CocoaPods",
+            "value": "cocoapods"
+          },
+          {
+            "label": "Conan",
+            "value": "conan"
+          },
+          {
+            "label": "CRAN",
+            "value": "cran"
+          },
+          {
+            "label": "Debian",
+            "value": "debian"
+          },
+          {
+            "label": "Gems",
+            "value": "gems"
+          },
+          {
+            "label": "Git LFS",
+            "value": "gitlfs"
+          },
+          {
+            "label": "Go",
+            "value": "go"
+          },
+          {
+            "label": "Gradle",
+            "value": "gradle"
+          },
+          {
+            "label": "Ivy",
+            "value": "ivy"
+          },
+          {
+            "label": "npm",
+            "value": "npm"
+          },
+          {
+            "label": "Generic",
+            "value": "generic"
+          },
+          {
+            "label": "NuGet",
+            "value": "nuget"
+          },
+          {
+            "label": "Opkg",
+            "value": "opkg"
+          },
+          {
+            "label": "PHP Composer",
+            "value": "php_composer"
+          },
+          {
+            "label": "Puppet",
+            "value": "puppet"
+          },
+          {
+            "label": "PyPI",
+            "value": "pypi"
+          },
+          {
+            "label": "RPM",
+            "value": "rpm"
+          },
+          {
+            "label": "SBT",
+            "value": "sbt"
+          },
+          {
+            "label": "Vagrant",
+            "value": "vagrant"
+          }
+        ]
+      },
+      {
+        "type": "textarea",
+        "label": "Description",
+        "name": "description",
+        "placeholder": "",
+        "optional": false,
+        "options": null
+      },
+      {
+        "type": "text",
+        "label": "Repository Owner",
+        "name": "repo_owner",
+        "placeholder": "z00abcd",
+        "optional": false,
+        "options": null
+      },
+      {
+        "type": "text",
+        "label": "Blossom CI ID",
+        "name": "blossom_ci_id",
+        "placeholder": "CI12345678",
+        "optional": true,
+        "options": null
+      },
+      {
+        "type": "text",
+        "label": "Additional Notes",
+        "name": "request_notes",
+        "placeholder": "",
+        "optional": true,
+        "options": null
+      }
+    ]
+  }

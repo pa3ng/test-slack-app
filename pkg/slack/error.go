@@ -16,7 +16,7 @@ type ResponseMetadata struct {
 	Messages []string `json:"messages"`
 }
 
-func containsErrors(responseBody string) (hasErrors bool, message string, functionError error) {
+func ContainsErrors(responseBody string) (hasErrors bool, message string, functionError error) {
 	var e Error
 	err := json.Unmarshal([]byte(responseBody), &e)
 	if err != nil {

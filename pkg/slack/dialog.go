@@ -96,7 +96,7 @@ func OpenDialog(triggerID string) error {
 		return fmt.Errorf("[ERROR] %s", err.Error())
 	}
 
-	hasErrors, errMsg, err := containsErrors(string(b))
+	hasErrors, errMsg, err := ContainsErrors(string(b))
 	if err != nil {
 		return fmt.Errorf("[ERROR] %s", err.Error())
 	}
