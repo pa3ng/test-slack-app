@@ -2,6 +2,7 @@ package server
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 
 	"github.com/julienschmidt/httprouter"
@@ -25,13 +26,13 @@ func Commands(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 		fmt.Println("ARGS: ", args)
 		switch action {
 		case "create":
-			triggerID := r.FormValue("trigger_id")
+			triggerID := "590348099733.284337930454.27885ccd263aadc0d0a9b9c912351739"
 			err := slack.OpenDialog(triggerID)
 			if err != nil {
 				fmt.Fprintln(w, err.Error())
 				return
 			}
-			fmt.Println("Repo Creation Dialog Opened!")
+			log.Println("Repo Creation Dialog Opened!")
 		default:
 			fmt.Fprintln(w, "Sorry, I do not understand that action.")
 			return
